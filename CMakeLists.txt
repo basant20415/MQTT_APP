@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.0)
 
-project(PRINT)  # Project name
+project(mqtt)  # Project name
 
 set(CMAKE_CXX_STANDARD 17)
 
@@ -18,4 +18,4 @@ find_package(PahoMqttCpp REQUIRED)
 add_executable(${PROJECT_NAME} ${SOURCE})
 target_link_libraries(PRINT PahoMqttCpp::paho-mqttpp3)
 # target_link_libraries(my_app AWS::aws-cpp-sdk-iot)
-install(TARGETS PRINT RUNTIME DESTINATION bin)
+install(TARGETS mqtt RUNTIME DESTINATION bin)
