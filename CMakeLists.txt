@@ -4,18 +4,22 @@ project(mqtt)  # Project name
 
 set(CMAKE_CXX_STANDARD 17)
 
-# Include the directory where math.hpp is located
-include_directories( includes / utils)
+# Include directories
+include_directories(includes utils)
 
 # Source files
 set(SOURCE
     src/aws.cpp
-    
 )
+
+# Find MQTT library
 find_package(PahoMqttCpp REQUIRED)
-# find_package(AWSSDK REQUIRED COMPONENTS iot)
-# Add executable
+
+# Create the executable
 add_executable(${PROJECT_NAME} ${SOURCE})
-target_link_libraries(PRINT PahoMqttCpp::paho-mqttpp3)
-# target_link_libraries(my_app AWS::aws-cpp-sdk-iot)
-install(TARGETS mqtt RUNTIME DESTINATION bin)
+
+# Link the required libraries
+target_link_libraries(${PROJECT_NAME} PahoMqttCpp::paho-mqttpp3)
+
+# Install the executable
+install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION bin)
