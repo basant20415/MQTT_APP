@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.0)
 
-project(PRINT)  # Project name
+project(mqtt)  # Project name
 
 set(CMAKE_CXX_STANDARD 17)
 
