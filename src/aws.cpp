@@ -68,8 +68,8 @@ mqtt::message_ptr pubmsg = mqtt::make_message(TOPIC, payload, QOS, false);
             } else {
                 std::cout << "No detection found." << std::endl;
             }
-
-            std::this_thread::sleep_for(std::chrono::seconds(2));
+            break;
+           
         }
 
         // Disconnect
