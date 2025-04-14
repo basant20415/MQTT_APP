@@ -6,7 +6,7 @@
 #include <mqtt/client.h>
 
 #define ADDRESS     "ssl://abr0s9fb0umjr-ats.iot.us-east-2.amazonaws.com:8883"
-#define CLIENTID    "iotconsole-32510848-f5b1-49ec-bcba-b6e886b9165f"
+// #define CLIENTID    "iotconsole-1a6a4e07-1967-4ffb-b691-1b1dddfb1bbd"
 #define TOPIC       "road/damage"
 #define QOS         1
 #define TIMEOUT     std::chrono::seconds(10)
@@ -33,7 +33,12 @@ bool checkForDetection(const std::string& filename) {
     return false;
 }
 
-int main() {
+int main(int argc, char* argv[]) {
+    if (argc < 2) {
+        std::cerr << "Usage: " << argv[0] << " <client_id>" << std::endl;
+        return 1;
+    }
+    std::string CLIENTID = argv[1];
     try {
         // Create MQTT client
         mqtt::client client(ADDRESS, CLIENTID);
