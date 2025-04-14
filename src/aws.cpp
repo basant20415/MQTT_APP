@@ -67,7 +67,7 @@ int main(int argc, char* argv[]) {
         std::cout << "Connected to AWS IoT Core!" << std::endl;
 
         while (true) {
-            if (checkForDetection("/home/ubuntu/aws_gp/data.txt")) {
+            if (checkForDetection("data.txt")) {
                 std::cout << "Detected! Sending alert to AWS IoT Core..." << std::endl;
 
                 // mqtt::message_ptr pubmsg = mqtt::make_message(TOPIC, " detected", QOS, false);
