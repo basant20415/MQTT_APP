@@ -90,7 +90,7 @@ std::cout << "Message published to topic: " << TOPIC << std::endl;
         std::cout << "Disconnected from AWS IoT Core." << std::endl;
 
 // Clear the contents of data.txt
-std::ofstream ofs("/home/ubuntu/aws_gp/data.txt", std::ios::out | std::ios::trunc);
+std::ofstream ofs("data.txt", std::ios::out | std::ios::trunc);
 if (!ofs) {
 std::cerr << "Error: Cannot open file to clear its contents." << std::endl;
 }
