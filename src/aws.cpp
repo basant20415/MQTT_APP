@@ -67,7 +67,7 @@ int main(int argc, char* argv[]) {
         std::cout << "Connected to AWS IoT Core!" << std::endl;
 
         while (true) {
-            if (checkForDetection("data.txt")) {
+            if (checkForDetection("./data.txt")) {
                 std::cout << "Detected! Sending alert to AWS IoT Core..." << std::endl;
 
                 // mqtt::message_ptr pubmsg = mqtt::make_message(TOPIC, " detected", QOS, false);
@@ -90,7 +90,7 @@ std::cout << "Message published to topic: " << TOPIC << std::endl;
         std::cout << "Disconnected from AWS IoT Core." << std::endl;
 
 // Clear the contents of data.txt
-std::ofstream ofs("data.txt", std::ios::out | std::ios::trunc);
+std::ofstream ofs("./data.txt", std::ios::out | std::ios::trunc);
 if (!ofs) {
 std::cerr << "Error: Cannot open file to clear its contents." << std::endl;
 }
