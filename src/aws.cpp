@@ -12,9 +12,9 @@
 #define TIMEOUT     std::chrono::seconds(10)
 
 // AWS IoT Core Credentials
-#define CA_PATH     "/home/ubuntu/aws_gp/root-ca.pem"
-#define CERT_PATH   "/home/ubuntu/aws_gp/certificate.pem.crt"
-#define KEY_PATH    "/home/ubuntu/aws_gp/private.pem.key"
+#define CA_PATH     "/home/root/document/root-ca.pem"
+#define CERT_PATH   "/home/root/document/certificate.pem.crt"
+#define KEY_PATH    "/home/root/document/private.pem.key"
 
 // Function to read text file and check for "detected"
 bool checkForDetection(const std::string& filename) {
